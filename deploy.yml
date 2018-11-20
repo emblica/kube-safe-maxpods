@@ -75,7 +75,7 @@ spec:
       serviceAccountName: kube-safe-maxpods
       containers:
       - name: kube-safe-maxpods
-        image: docker.io/emblica/kube-safe-maxpods:latest
+        image: docker.io/emblica/kube-safe-maxpods:0.1
         args:
         - "-logtostderr=true"
         - "-v=1"
