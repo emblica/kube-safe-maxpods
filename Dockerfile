@@ -5,12 +5,12 @@ RUN curl -fsSL -o /usr/local/bin/dep https://github.com/golang/dep/releases/down
 RUN mkdir -p /go/src/github.com/emblica/kube-safe
 WORKDIR /go/src/github.com/emblica/kube-safe
 
-COPY Gopkg.toml Gopkg.lock ./
+COPY src/github.com/emblica/kube-safe/Gopkg.toml src/github.com/emblica/kube-safe/Gopkg.lock ./
 # copies the Gopkg.toml and Gopkg.lock to WORKDIR
 
 RUN dep ensure -vendor-only
 # install the dependencies without checking for go code
-COPY *.go ./
+COPY src/github.com/emblica/kube-safe/*.go ./
 
 RUN CGO_ENABLED=0 go build \
     -installsuffix 'static' \
