@@ -51,7 +51,7 @@ kind: Service
 metadata:
   labels:
     app: kube-safe-maxpods
-  name: kube-safe-maxpods
+  name: kube-safe-maxpodcount
   namespace: kube-system
 spec:
   ports:
